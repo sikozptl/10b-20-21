@@ -18,11 +18,6 @@ public class AUTO{
     }
 
     //Methoden
-    public void anlassen(){
-        MotorAn = true;
-        System.out.println("Auto macht brumm!");
-    }
-    
     public void startStop(){
         //Wenn Motor an ist, ausschalten und umgekehrt
         if(MotorAn == true){
@@ -50,7 +45,7 @@ public class AUTO{
             System.out.println("Motor läuft nicht!");
         }//Prüfung MotorAn Ende
     }
-    
+
     //Auto soll nur beschleunigen und bremsen, wenn Motor läuft
     public void beschleunigen(int kmh){
         //Prüfen, ob Motor läuft (Vergleich mit ==)
@@ -67,27 +62,26 @@ public class AUTO{
             System.out.println("Motor läuft nicht!");
         }//Prüfung MotorAn Ende
     }    
-    
+
     public void setFarbe(String NeueFarbe){
         Farbe = NeueFarbe;
     }
-    
+
     //Methode mit Eingabeparameter
     public void setHersteller(String NeuerHersteller){
         Hersteller = NeuerHersteller;
     }
-    
+
     //Methode mit Eingabeparameterliste
     //die Methode soll alles Ändern, was sinnvollerweise geändert werden kann
     public void setAlles(String NeueFarbe, String NeuerHersteller,
-            int NeueLeistung, int NeueHoechstgeschwindigkeit){
+    int NeueLeistung, int NeueHoechstgeschwindigkeit){
         Hersteller = NeuerHersteller;
         Farbe = NeueFarbe;
         Leistung = NeueLeistung;
         Hoechstgeschwindigkeit = NeueHoechstgeschwindigkeit;
     }
-    
-    
+
     public void bremsen(){
         // Geschwindigkeit soll >= 0 bleiben
         if(Geschwindigkeit >= 10){
