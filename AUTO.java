@@ -7,7 +7,7 @@ public class AUTO{
     boolean MotorAn;
     int Hoechstgeschwindigkeit;
 
-    //Konstruktor
+    //Konstruktoren (kein Rückgabetyp, gleicher Name wie Klasse)
     public AUTO(){
         Farbe = "schwarz";
         Hersteller = "BMW";
@@ -16,6 +16,24 @@ public class AUTO{
         MotorAn = false; //Motor läuft nicht
         Hoechstgeschwindigkeit = 60;
     }
+
+    public AUTO(String NeueFarbe){
+        Farbe = NeueFarbe;
+        Hersteller = "BMW";
+        Leistung = 100;
+        Geschwindigkeit = 0;
+        MotorAn = false; //Motor läuft nicht
+        Hoechstgeschwindigkeit = 60;
+    }    
+
+    public AUTO(String NeueFarbe, String NeuerHersteller){
+        Farbe = NeueFarbe;
+        Hersteller = NeuerHersteller;
+        Leistung = 100;
+        Geschwindigkeit = 0;
+        MotorAn = false; //Motor läuft nicht
+        Hoechstgeschwindigkeit = 60;
+    }        
 
     //Methoden
     public void startStop(){
@@ -31,36 +49,28 @@ public class AUTO{
 
     //Auto soll nur beschleunigen und bremsen, wenn Motor läuft
     public void beschleunigen(){
-        //Prüfen, ob Motor läuft (Vergleich mit ==)
-        if(MotorAn == true){
-            //Das Auto soll nie schneller als 80 fahren!
-            if(Geschwindigkeit < Hoechstgeschwindigkeit){
-                //neue Geschw = alte Geschw +10
-                // = heisst Zuweisung
-                Geschwindigkeit = Geschwindigkeit + 10;
-            }else{
-                System.out.println("Höchstgeschwindigkeit erreicht");
-            }//Prüfung Geschwindigkeit Ende
-        }else{
-            System.out.println("Motor läuft nicht!");
-        }//Prüfung MotorAn Ende
+        beschleunigen(10);
     }
 
     //Auto soll nur beschleunigen und bremsen, wenn Motor läuft
     public void beschleunigen(int kmh){
-        //Prüfen, ob Motor läuft (Vergleich mit ==)
-        if(MotorAn == true){
-            //Das Auto soll nie schneller als 80 fahren!
-            if(Geschwindigkeit < Hoechstgeschwindigkeit){
-                //neue Geschw = alte Geschw +10
-                // = heisst Zuweisung
-                Geschwindigkeit = Geschwindigkeit + 10;
+        if(kmh>0){
+            //Prüfen, ob Motor läuft (Vergleich mit ==)
+            if(MotorAn == true){
+                //Das Auto soll nie schneller als 80 fahren!
+                if(Geschwindigkeit < Hoechstgeschwindigkeit){
+                    //neue Geschw = alte Geschw +10
+                    // = heisst Zuweisung
+                    Geschwindigkeit = Geschwindigkeit + kmh;
+                }else{
+                    System.out.println("Höchstgeschwindigkeit erreicht");
+                }//Prüfung Geschwindigkeit Ende
             }else{
-                System.out.println("Höchstgeschwindigkeit erreicht");
-            }//Prüfung Geschwindigkeit Ende
+                System.out.println("Motor läuft nicht!");
+            }//Prüfung MotorAn Ende
         }else{
-            System.out.println("Motor läuft nicht!");
-        }//Prüfung MotorAn Ende
+            System.out.println("kmh muss positiv sein.");
+        }
     }    
 
     public void setFarbe(String NeueFarbe){
