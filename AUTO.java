@@ -1,24 +1,11 @@
 public class AUTO extends KFZ{
 
-    //Konstruktoren (kein Rückgabetyp, gleicher Name wie Klasse)
     public AUTO(){
-        Farbe = "schwarz";
-        Hersteller = "BMW";
-        Hubraum = 2.0;
-        Leistung = berechneLeistung();
-        Geschwindigkeit = 0;
-        MotorAn = false; //Motor läuft nicht
-        Hoechstgeschwindigkeit = berechneHoechstgeschwindigkeit();
+        super();
     }
-
+    
     public AUTO(String NeueFarbe, String NeuerHersteller, double NeuerHubraum){
-        Farbe = NeueFarbe;
-        Hersteller = NeuerHersteller;
-        Hubraum = NeuerHubraum;
-        Leistung = berechneLeistung();
-        Geschwindigkeit = 0;
-        MotorAn = false; //Motor läuft nicht
-        Hoechstgeschwindigkeit = berechneHoechstgeschwindigkeit();
+        super(NeueFarbe, NeuerHersteller, NeuerHubraum);
     }    
     
     //das ist eine statische Methode, d.h.

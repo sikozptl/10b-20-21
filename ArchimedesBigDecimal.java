@@ -1,7 +1,7 @@
 import java.lang.Math;
 import java.math.*;
 
-public class Archimedes2{
+public class ArchimedesBigDecimal{
 
     //Attributliste
     BigDecimal n; //Anzahl der Ecken
@@ -9,7 +9,7 @@ public class Archimedes2{
     long eckemax;
     
     //Konstruktor
-    public Archimedes2(){
+    public ArchimedesBigDecimal(){
         //Startwerte
         n= new BigDecimal(6);
         un=new BigDecimal(3.0);
