@@ -5,22 +5,10 @@ public abstract class KFZ extends FAHRZEUG{
     double Hubraum;
     
     //Konstruktoren (kein Rückgabetyp, gleicher Name wie Klasse)
-    public KFZ(){
-        Farbe = "schwarz";
-        Hersteller = "BMW";
-        Hubraum = 2.0;
+    public KFZ(String NFa, String NHe, double NHub){
+        super(NFa, NHe, 0);
+        Hubraum = NHub;
         Leistung = berechneLeistung();
-        Geschwindigkeit = 0;
-        MotorAn = false; //Motor läuft nicht
-        Hoechstgeschwindigkeit = berechneHoechstgeschwindigkeit();
-    }
-
-    public KFZ(String NeueFarbe, String NeuerHersteller, double NeuerHubraum){
-        Farbe = NeueFarbe;
-        Hersteller = NeuerHersteller;
-        Hubraum = NeuerHubraum;
-        Leistung = berechneLeistung();
-        Geschwindigkeit = 0;
         MotorAn = false; //Motor läuft nicht
         Hoechstgeschwindigkeit = berechneHoechstgeschwindigkeit();
     }        
@@ -29,7 +17,7 @@ public abstract class KFZ extends FAHRZEUG{
     public String toString(){
         return "KFZ-Objekt: " + Hersteller + " " + Farbe 
         + " " + Hubraum + " " + Geschwindigkeit;
-    }
+    }    
     
     public double berechneLeistung(){
         return Hubraum * 70.0;
