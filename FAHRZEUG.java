@@ -1,8 +1,8 @@
 public abstract class FAHRZEUG{
-    String Farbe;
-    String Hersteller;
-    double Geschwindigkeit;
-    double Hoechstgeschwindigkeit; 
+    private String Farbe;
+    private String Hersteller;
+    private double Geschwindigkeit;
+    private double Hoechstgeschwindigkeit; 
 
     public FAHRZEUG(String NeueFarbe, String NeuerHersteller, double NeueHoechstgeschwindigkeit){
         Farbe = NeueFarbe;
@@ -11,6 +11,26 @@ public abstract class FAHRZEUG{
         Hoechstgeschwindigkeit = NeueHoechstgeschwindigkeit;
     }
 
+    public String getHersteller(){
+        return Hersteller;
+    }
+    
+    public String getFarbe(){
+        return Farbe;
+    }
+    
+    public double getGeschwindigkeit(){
+        return Geschwindigkeit;
+    }
+    
+    public double getHoechstgeschwindigkeit(){
+        return Hoechstgeschwindigkeit;
+    }    
+    
+    public void setHoechstgeschwindigkeit(double hg){
+        Hoechstgeschwindigkeit = hg;
+    }
+    
     //Die toString-Methode liefert eine Textrepräsentation des Objekts
     public String toString(){
         return "Fahrzeug-Objekt: " + Hersteller + " " + Farbe 

@@ -1,9 +1,9 @@
 public class MOTOR{
     
     //Attribute 
-    double Leistung;
-    boolean MotorAn;
-    double Hubraum;
+    private double Leistung;
+    private boolean MotorAn;
+    private double Hubraum;
     
     //Konstruktoren (kein Rückgabetyp, gleicher Name wie Klasse)
     public MOTOR(double NHub){
@@ -11,6 +11,18 @@ public class MOTOR{
         Leistung = berechneLeistung();
         MotorAn = false; //Motor läuft nicht
     }        
+    
+    public double getLeistung(){
+        return Leistung;
+    }
+    
+    public boolean getMotorAn(){
+        return MotorAn;
+    }
+    
+    public double getHubraum(){
+        return Hubraum;
+    }    
     
     public double berechneLeistung(){
         return Hubraum * 70.0;
