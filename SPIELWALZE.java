@@ -36,4 +36,8 @@ public class SPIELWALZE{
         lampe.verschiebe(nachRechts, nachUnten);
     }
     
+    public int getFarbe(){
+        return lampe.getFarbe();
+    }
+    
 }
