@@ -64,10 +64,35 @@ public class SPIELAUTOMAT{
         }
     }
 
-    public void spieleBisGrosserGewinn(){
-        //Wiederhole spiele() bis großer Gewinn 
-        //Die Sequenz wird so lange wiederholt, solange die Bedingung wahr ist
-        while(ermittleGewinn() < 10 && guthaben > 0){
+    /** Wiederhole spiele() bis großer Gewinn 
+     *  Die Sequenz wird so lange wiederholt, solange die Bedingung wahr ist
+     *  Wiederholt werden soll ... solange der Gewinn kleiner als 10 ist und
+     *  das Guthaben größer 0 ist */
+    public void gewinneSicher(){
+        while( (ermittleGewinn() < 10) && (guthaben > 0) ){
+            spiele();
+        }
+    }
+
+    /** Spielt weiter, solange Guthaben vorhanden ist */
+    public void spieleSelbst(){
+        while(guthaben > 0){
+            spiele();
+        }
+    }
+
+    /** Spielt n mal */
+    public void spielenmmal(int n){
+        int i = 0;
+        while(i<n){
+            spiele();
+            i++; // i = i+1;
+        }
+    }
+
+    /** Spielt auch n mal */
+    public void spielenmal2(int n){
+        for(int i=0; i<n; i++){
             spiele();
         }
     }
