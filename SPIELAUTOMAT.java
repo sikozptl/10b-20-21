@@ -8,6 +8,7 @@ public class SPIELAUTOMAT{
     private Random zufgen;
     private int guthaben;
     private int spielnr;
+    private int[] gewinnSpeicher;
 
     //Konstruktor
     public SPIELAUTOMAT()    {
@@ -17,6 +18,7 @@ public class SPIELAUTOMAT{
         zufgen = new Random();
         guthaben = 0;
         spielnr = 0;
+        gewinnSpeicher = new int[10000];
     }
 
     //Methoden
@@ -56,6 +58,8 @@ public class SPIELAUTOMAT{
             setzeFarbmuster(zufgen.nextInt(9),zufgen.nextInt(9),zufgen.nextInt(9));
             //Gewinn addieren
             guthaben = guthaben + ermittleGewinn();
+            //Gewinn ins Array schreiben
+            gewinnSpeicher[spielnr] = ermittleGewinn();
             //Werte ausgeben
             schreibeWerte();
             spielnr = spielnr +1;
@@ -69,9 +73,9 @@ public class SPIELAUTOMAT{
      *  Wiederholt werden soll ... solange der Gewinn kleiner als 10 ist und
      *  das Guthaben größer 0 ist */
     public void gewinneSicher(){
-        while( (ermittleGewinn() < 10) && (guthaben > 0) ){
+        do{
             spiele();
-        }
+        }while((ermittleGewinn() < 10) && (guthaben > 0));
     }
 
     /** Spielt weiter, solange Guthaben vorhanden ist */

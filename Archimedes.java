@@ -13,7 +13,7 @@ public class Archimedes{
     }
 
     //Methoden
-    //Formel		u_2n = (2*u_n)/(WURZEL(2+2*WURZEL(1-(u_n/n)^2))
+    //Formel        u_2n = (2*u_n)/(WURZEL(2+2*WURZEL(1-(u_n/n)^2))
     //  un = un +1; Neuer Wert = Alter Wert +1
     public void berechneUmfang2nEck(){
 
