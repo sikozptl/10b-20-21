@@ -22,7 +22,7 @@ public class SPIELAUTOMAT{
     }
 
     //Methoden
-    public int ermittleGewinn(){
+    private int ermittleGewinn(){
         int farbe1 = w1.getFarbe();
         int farbe2 = w2.getFarbe();
         int farbe3 = w3.getFarbe();
@@ -40,7 +40,7 @@ public class SPIELAUTOMAT{
         }
     }
 
-    public void setzeFarbmuster(int farbe1, int farbe2, int farbe3){
+    private void setzeFarbmuster(int farbe1, int farbe2, int farbe3){
         w1.faerbeUm(farbe1);
         w2.faerbeUm(farbe2);
         w3.faerbeUm(farbe3);        
@@ -107,4 +107,22 @@ public class SPIELAUTOMAT{
             " Gewinn: " + ermittleGewinn() + " Guthaben: " + guthaben
         );
     }
+    
+    public int berechneSumme(){
+        int summe = 0;
+        for(int i=0; i<gewinnSpeicher.length ;i++){
+            summe = summe + gewinnSpeicher[i];
+        }
+        return summe;
+    }
+    
+    public int zaehleHauptgewinne(){
+        int hg = 0;
+        for(int i=0; i<gewinnSpeicher.length ;i++){
+            if(gewinnSpeicher[i]==10){
+                hg = hg+1;
+            }
+        }
+        return hg;
+    }    
 }
